@@ -6,20 +6,29 @@ public class SistemaPrincipal {
 
     public static void main(String [] args) {
 
-        Passageiro passageiro1 = new Passageiro();
-        passageiro1.nome = "Ana Silva";
-        passageiro1.saldo = 50.0;
+        Passageiro passageiro1 = new Passageiro("Ana Silva", "222");
+        System.out.println("Recarga passaeiro 1");
+        passageiro1.adicionarSaldo(50.0);
 
-        Passageiro passageiro2 = new Passageiro();
-        passageiro2.nome = "Carlos Souza";
-        passageiro2.saldo = 12.50;
+        Passageiro passageiro2 = new Passageiro("Carlos Souza","333");
+        System.out.println("Recarga passaeiro 2");
+        passageiro2.adicionarSaldo(12.5);
 
         System.out.println("--- Sistema FiapRide ---");
 
         System.out.println(
-                "passageiro: " + passageiro1.nome + "saldo: R$" + passageiro1.saldo);
+                "Passageiro: " + passageiro1.nome +
+                        "saldo: R$" + passageiro1.saldo +
+                        "    CPF: " + passageiro1.cpf);
 
         System.out.println(
-                "passageiro: " + passageiro2.nome + "saldo: R$" + passageiro2.saldo);
+                "Passageiro: " + passageiro2.nome +
+                        "saldo: R$" + passageiro2.saldo +
+                        "    CPF: " + passageiro2.cpf);
+
+        System.out.println("Pagando viagem do passageiro 1");
+        passageiro1.pagarViagem(20);
+        System.out.println("Pagando viagem do passageiro 2");
+        passageiro2.pagarViagem(20);
     }
 }
