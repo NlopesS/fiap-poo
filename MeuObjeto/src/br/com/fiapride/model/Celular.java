@@ -1,10 +1,37 @@
 package br.com.fiapride.model;
 
+import java.awt.*;
+
 public class Celular {
-    public String cor;
-    public String marca;
-    public double preco;
-    public boolean ligado = false;
+    private String cor;
+    private String marca;
+    private double preco;
+    private boolean ligado = false;
+
+    public String getCor() {
+        return cor;
+    }
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+    public void setPreco(double preco) {
+        if (preco < 0) {
+            System.out.println("Erro: O preco nao pode ser negativo");
+        } else {
+            this.preco = preco;
+        }
+    }
 
     public void ligar(){
         if (ligado) {
