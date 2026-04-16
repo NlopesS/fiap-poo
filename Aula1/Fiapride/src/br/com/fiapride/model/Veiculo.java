@@ -1,0 +1,37 @@
+package br.com.fiapride.model;
+
+public class Veiculo {
+
+    private String placa;
+    private String modelo;
+
+    public Veiculo (String placa, String modelo) {
+
+        this.setPlaca(placa);
+        this.placa = placa;
+        this.modelo = modelo;
+        System.out.println("Registro inicial: Um " + this.modelo + "nasceu com a placa " + this.placa);
+    }
+
+    public String getPlaca () {
+        return this.placa;
+    }
+
+    public String getModelo () {
+        return this.modelo;
+    }
+
+    public void atualizarPlaca (String novaPlaca) {
+        System.out.println("Solicitada atualizacao de placa no Detran para o veiculo " + this.modelo + "...");
+    }
+
+    private void setPlaca (String novaPlaca) {
+        if (novaPlaca != null && !novaPlaca.trim().isEmpty()) {
+            this.placa = novaPlaca;
+            System.out.println ("Sucesso: A placa agora e " + this.placa);
+        } else {
+            System.out.println("Erro de Validacao: a placa informada e invalida!");
+        }
+    }
+
+}

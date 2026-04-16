@@ -1,12 +1,15 @@
 package br.com.fiapride.model;
 
-import java.awt.*;
-
 public class Celular {
     private String cor;
     private String marca;
     private double preco;
     private boolean ligado = false;
+
+    public Celular(String cor, String marca) {
+        this.cor = cor;
+        this.marca = marca;
+    }
 
     public String getCor() {
         return cor;

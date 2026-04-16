@@ -6,18 +6,18 @@ public class SistemaPrincipal {
 
     public static void main(String[] args) {
 
-        Celular meuCelular = new Celular();
+        Celular meuCelular = new Celular("Preto", "Samsung");
         meuCelular.setCor("Preto");
         meuCelular.setMarca("Samsung");
         meuCelular.setPreco(2300.0);
 
-        Celular CelularDoLuiz = new Celular();
+        Celular CelularDoLuiz = new Celular("Azul", "Apple");
         CelularDoLuiz.setCor("Azul");
         CelularDoLuiz.setMarca("Apple");
         CelularDoLuiz.setPreco(4000.0);
 
 
-        System.out.println("Meu celular e da: " + meuCelular.getMarca());
+        System.out.println("Meu celular e da: " + meuCelular.getMarca() + meuCelular.getCor());
         meuCelular.ligar();
         meuCelular.ligar();
         meuCelular.aplicarDesconto(300.0);
