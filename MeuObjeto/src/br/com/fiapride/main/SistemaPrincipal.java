@@ -1,17 +1,18 @@
 package br.com.fiapride.main;
 
 import br.com.fiapride.model.Celular;
+import br.com.fiapride.model.Bateria;
 
 public class SistemaPrincipal {
 
     public static void main(String[] args) {
 
-        Celular meuCelular = new Celular("Preto", "Samsung");
+        Celular meuCelular = new Celular("Preto", "Samsung", 100);
         meuCelular.setCor("Preto");
         meuCelular.setMarca("Samsung");
         meuCelular.setPreco(2300.0);
 
-        Celular CelularDoLuiz = new Celular("Azul", "Apple");
+        Celular CelularDoLuiz = new Celular("Azul", "Apple", 0);
         CelularDoLuiz.setCor("Azul");
         CelularDoLuiz.setMarca("Apple");
         CelularDoLuiz.setPreco(4000.0);
@@ -19,11 +20,13 @@ public class SistemaPrincipal {
 
         System.out.println("Meu celular e da: " + meuCelular.getMarca() + meuCelular.getCor());
         meuCelular.ligar();
-        meuCelular.ligar();
         meuCelular.aplicarDesconto(300.0);
 
         System.out.println("o celular do luiz e da: " + CelularDoLuiz.getMarca());
+        CelularDoLuiz.ligar();
         CelularDoLuiz.aplicarDesconto(5000.0);
+
+
     }
 
 }

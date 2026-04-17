@@ -5,10 +5,12 @@ public class Celular {
     private String marca;
     private double preco;
     private boolean ligado = false;
+    private int cargaBateria;
 
-    public Celular(String cor, String marca) {
+    public Celular(String cor, String marca, int cargaBateria) {
         this.cor = cor;
         this.marca = marca;
+        this.cargaBateria = cargaBateria;
     }
 
     public String getCor() {
@@ -37,12 +39,15 @@ public class Celular {
     }
 
     public void ligar(){
-        if (ligado) {
-            System.out.println("Erro o celular ja esta ligado");
+        if (cargaBateria <= 0) {
+            System.out.println("Erro: Celular sem carga!");
+        }
+        else if (ligado) {
+            System.out.println("Erro: O celular já está ligado");
         }
         else {
             ligado = true;
-            System.out.println("O celular ligou");
+            System.out.println("O celular ligou. Carga: " + cargaBateria + "%");
         }
     }
 

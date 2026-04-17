@@ -2,40 +2,23 @@ package br.com.fiapride.main;
 
 import br.com.fiapride.model.Passageiro;
 import br.com.fiapride.model.Veiculo;
+import br.com.fiapride.model.Viagem;
 
 public class SistemaPrincipal {
-    public static void main(String [] args) {
+    public static void main(String[] args) {
 
-        System.out.println("--- Iniciando o Sistema FiapRide --- \n");
+        System.out.println("--- FIAPRIDE: Inicializando Sistema ---");
 
-        Passageiro passageiro1 = new Passageiro("Ana Silva", "222.222.222-22");
-        System.out.println("Recarga passaeiro 1");
-        passageiro1.adicionarSaldo(50.0);
+        Passageiro ana = new Passageiro("Ana Silva", "222.222.222-22");
+        Veiculo carroDoJoao = new Veiculo("ABC-1234", "Toyota Corolla ");
 
-        Passageiro passageiro2 = new Passageiro("Carlos Souza","333.333.333-33");
-        System.out.println("Recarga passaeiro 2");
-        passageiro2.adicionarSaldo(12.5);
+        Viagem viagemDaAna = new Viagem("Avenida Paulista, 1000", ana, carroDoJoao);
 
-        System.out.println("--- Status dos Passageiros ---");
+        viagemDaAna.exibirResumo();
 
-        System.out.println(
-                "Passageiro: " + passageiro1.getNome() +
-                        "Saldo: R$" + passageiro1.getSaldo() +
-                        "    CPF: " + passageiro1.getCpf());
+        ana.adicionarSaldo(50.0);
 
-        System.out.println(
-                "Passageiro: " + passageiro2.getNome() +
-                        "saldo: R$" + passageiro2.getSaldo() +
-                        "    CPF: " + passageiro2.getCpf());
+        System.out.println("Saldo da Ana consultado ATRAVÉS da Viagem: R$ " + viagemDaAna.getSolicitante().getSaldo());
 
-        System.out.println("\n--- Realizando Viagems ---");
-
-        System.out.println("Pagando viagem do passageiro 1 (Ana)...");
-        passageiro1.pagarViagem(20);
-
-        System.out.println("Pagando viagem do passageiro 2 (Carlos)...");
-        passageiro2.pagarViagem(20);
-
-        Veiculo meuCarro = new Veiculo("ABC-1234 ", "Toyota Corolla ");
     }
 }
